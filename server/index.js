@@ -1,5 +1,6 @@
 import express from "express";
-import { loginService, signupService } from "./database/services.js";
+import { loginService, signupService } from "../database/services.js";
+
 const app = express();
 app.use(express.json());
 
@@ -26,9 +27,9 @@ app.use((req, res, next) => {
   next();
 });
 
-app.get("/", (req, res) => res.send("This is the backend for the Cyperpunk Form Project"));
-// Route xử lý đăng nhập
-app.post("/login", (req, res) => {
+app.get("/api", (req, res) => res.send("This is the backend for the Cyperpunk Form Project"));
+
+app.post("/api/login", (req, res) => {
   try {
     const userData = loginService(req.body);
     return res.status(200).json({ user: userData });
@@ -37,8 +38,7 @@ app.post("/login", (req, res) => {
   }
 });
 
-// Route xử lý đăng ký
-app.post("/signup", (req, res) => {
+app.post("/api/signup", (req, res) => {
   try {
     const userData = signupService(req.body);
     return res.status(201).json({ user: userData });
@@ -47,5 +47,4 @@ app.post("/signup", (req, res) => {
   }
 });
 
-// Export để Vercel xử lý
 export default app;
