@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cyberpunk Signup</title>
+    <link rel="stylesheet" href="../styles/globals.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <link rel="icon" type="image/x-icon" href="https://th.bing.com/th/id/OIP.aoZpZYcMC-giUOph_cFr4QHaEK?rs=1&pid=ImgDetMain">
+    <script src="https://kit.fontawesome.com/0afaeea3b6.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div id="beam-container"></div>
+    <div class="container">
+        <div class="form-container">
+            <div class="form-slogan">
+                <h1>CyberPunk<span>Access</span></h1>
+            </div>
+            
+            <div class="form-box" id="signupForm">
+                <h2 class="neon-text">New Account</h2>
+                <form id="signup-form">
+                    <div class="form-name-group">
+                        <div class="form-input">
+                            <input required type="text" name="firstName" class="cyberpunk-input">
+                            <label>First Name</label>
+                        </div>
+                        <div class="form-input">
+                            <input required type="text" name="lastName" class="cyberpunk-input">
+                            <label>Last Name</label>
+                        </div>
+                    </div>
+                    <div class="form-input">
+                        <input required type="text" name="username" class="cyberpunk-input">
+                        <label>Username</label>
+                    </div>
+                    <div class="form-input">
+                        <input required type="text" name="email" class="cyberpunk-input">
+                        <label>Email</label>
+                    </div>
+                    <div class="form-input">
+                        <input required type="text" name="password" class="cyberpunk-input input-password">
+                        <label>Password</label>
+                    </div>
+                    <div class="form-input">
+                        <input required type="text" name="confirmPassword" class="cyberpunk-input input-password">
+                        <label>Confirm Password</label>
+                    </div>
+                    <button type="submit" class="neon-btn">
+                        <span class="btn-text">Initialize</span>
+                    </button>
+                </form>
+                <p class="switch-text">Already registered? <a class="form-switch" href="login.html">Access System</a></p>
+            </div>
+        </div>
+    </div>
+    <button class="theme-toggle" id="themeToggle">
+        <i class="fa-solid fa-palette"></i>
+    </button>
+    <div class="theme-selector">
+        <h3>Select Theme</h3>
+        <div class="theme-options">
+            <div class="theme-option" data-theme="neon-oasis">Neon Oasis</div>
+            <div class="theme-option" data-theme="cyber-rose">Cyber Rose</div>
+            <div class="theme-option" data-theme="quantum-void">Quantum Void</div>
+            <div class="theme-option" data-theme="neon-inferno">Neon Inferno</div>
+            <div class="theme-option" data-theme="hyperdrive">HyperDrive</div>
+        </div>
+    </div>
+    <script src="../index.js"></script>
+</body>
+</html>
