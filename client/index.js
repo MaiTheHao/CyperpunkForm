@@ -85,7 +85,7 @@ document.addEventListener('DOMContentLoaded', () => {
             };
 
             try {
-                const response = await fetch("http://localhost:3000/login", {
+                const response = await fetch("https://cyperpunkform-backend.vercel.app/login", {
                     method: "POST",
                     body: JSON.stringify(loginData),
                     headers: {
@@ -123,7 +123,7 @@ document.addEventListener('DOMContentLoaded', () => {
             };
 
             try {
-                const response = await fetch("http://localhost:3000/signup", {
+                const response = await fetch("https://cyperpunkform-backend.vercel.app/signup", {
                     method: "POST",
                     body: JSON.stringify(signupData),
                     headers: {
