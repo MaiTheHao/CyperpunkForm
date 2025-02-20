@@ -1,31 +1,32 @@
-import dotenv from "dotenv";
 import express from "express";
-import morgan from "morgan";
-import { loginService, signupService } from "../database/services.js";
-
-dotenv.config({
-  path: "./.env",
-});
-
+import { loginService, signupService } from "./database/services.js";
 const app = express();
-app.use(morgan("dev"));
 app.use(express.json());
 
 // Middleware xử lý CORS và xác thực
 app.use((req, res, next) => {
-  res.header("Access-Control-Allow-Origin", "*");
-  res.header("Access-Control-Allow-Methods", "GET, POST");
+  const allowedOrigins = ["https://cyperpunkform.vercel.app"];
+  const origin = req.headers.origin;
+  if (allowedOrigins.includes(origin)) {
+    res.setHeader("Access-Control-Allow-Origin", origin);
+  }
+  
+  res.header("Access-Control-Allow-Methods", "GET, POST, OPTIONS, PUT, PATCH, DELETE");
   res.header("Access-Control-Allow-Headers", "Authorization, Content-Type");
+  res.header("Access-Control-Allow-Credentials", "true");
 
-  if (req.headers.authorization !== "Bearer haoyeuem" && req.headers.authorization)
+  if (req.headers.authorization !== "Bearer haoyeuem" && req.headers.authorization) {
     return res.status(401).json({ message: "Unauthorized" });
+  }
 
   if (req.method === "OPTIONS") {
     return res.status(200).end();
   }
+
   next();
 });
 
+app.get("/", (req, res) => res.send("This is the backend for the Cyperpunk Form Project"));
 // Route xử lý đăng nhập
 app.post("/login", (req, res) => {
   try {
