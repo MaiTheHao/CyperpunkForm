@@ -28,6 +28,8 @@
     --neon-tertiary: #B4F7FF;
     --bg-dark: #141517;
     --bg-darker: #090B10;
+    --neon-grid: rgba(0, 255, 140, 0.1);
+    --neon-glow: rgba(0, 255, 140, 0.3);
 }
 
 .theme-cyber-rose {
@@ -36,6 +38,8 @@
     --neon-tertiary: #FFC8DD;
     --bg-dark: #1A1A2E;
     --bg-darker: #0F0F1E;
+    --neon-grid: rgba(255, 0, 127, 0.1);
+    --neon-glow: rgba(255, 0, 127, 0.3);
 }
 
 .theme-quantum-void {
@@ -44,6 +48,8 @@
     --neon-tertiary: #B3E9F7;
     --bg-dark: #1B1035;
     --bg-darker: #0D071F;
+    --neon-grid: rgba(161, 0, 242, 0.1);
+    --neon-glow: rgba(161, 0, 242, 0.3);
 }
 
 .theme-neon-inferno {
@@ -52,6 +58,8 @@
     --neon-tertiary: #A5F0F8;
     --bg-dark: #1C1C1E;
     --bg-darker: #0D0D10;
+    --neon-grid: rgba(255, 49, 49, 0.1);
+    --neon-glow: rgba(255, 49, 49, 0.3);
 }
 
 .theme-hyperdrive {
@@ -60,6 +68,8 @@
     --neon-tertiary: #FFC8DD;
     --bg-dark: #211A1D;
     --bg-darker: #120C0E;
+    --neon-grid: rgba(255, 140, 0, 0.1);
+    --neon-glow: rgba(255, 140, 0, 0.3);
 }
 
 * {

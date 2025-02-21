@@ -5,8 +5,22 @@
 	min-height: 100vh;
 	padding: 40px 20px;
 	position: relative;
-	background: radial-gradient(circle at center, var(--bg-dark) 0%, var(--bg-darker) 100%);
+	background: linear-gradient(90deg, var(--neon-glow) 1px, transparent 1px) 0 0 / 20px 20px,
+		linear-gradient(0deg, var(--neon-glow) 1px, transparent 1px) 0 0 / 20px 20px;
 	overflow: hidden;
+	animation: gridScroll 8s ease-out infinite;
+}
+
+@keyframes gridScroll {
+	0% {
+		background-position: 0 0;
+	}
+	50% {
+		background-position: 40px 40px;
+	}
+	100% {
+		background-position: 0px 80px;
+	}
 }
 
 .container::before {
