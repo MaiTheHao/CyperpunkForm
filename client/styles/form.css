@@ -1,0 +1,181 @@
+/* Form Container */
+.form-container {
+    position: relative;
+    z-index: 1000;
+    width: var(--form-width);
+    padding: var(--spacing-xxl) var(--spacing-xl);
+    background: linear-gradient(
+        135deg, 
+        rgba(9, 11, 16, 0.8) 0%, 
+        rgba(20, 21, 23, 0.9) 100%
+    );
+    border: 1px solid var(--neon-primary);
+    border-radius: var(--border-radius-md);
+    box-shadow: var(--neon-shadow-lg), 
+                inset 0 0 var(--spacing-sm) var(--neon-glow);
+    overflow: hidden;
+}
+
+.form-container::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: 
+        linear-gradient(90deg, var(--neon-grid) 1px, transparent 1px) 0 0 / 20px 20px,
+        linear-gradient(0deg, var(--neon-grid) 1px, transparent 1px) 0 0 / 20px 20px;
+    pointer-events: none;
+}
+
+/* Form Header */
+.form-slogan {
+    position: relative;
+    margin-bottom: var(--spacing-xxxl);
+    text-align: center;
+}
+
+.form-slogan h1 {
+    color: var(--neon-tertiary);
+    font-size: 3.5em;
+    font-weight: 400;
+    letter-spacing: 4px;
+    text-shadow: var(--text-glow);
+}
+
+.form-slogan span {
+    color: var(--neon-primary);
+    display: block;
+    font-size: 0.5em;
+    letter-spacing: 15px;
+    margin-top: 5px;
+}
+
+.form-box h2 {
+    position: relative;
+    margin-bottom: var(--spacing-xl);
+    padding-bottom: var(--spacing-sm);
+    color: var(--neon-tertiary);
+    font-size: 2.2em;
+    text-align: center;
+    text-shadow: var(--neon-shadow-sm);
+}
+
+.form-box h2::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 150px;
+    height: 2px;
+    background: var(--neon-primary);
+    box-shadow: 0 0 10px var(--neon-primary);
+    transform: translateX(-50%);
+}
+
+/* Form Inputs */
+.form-name-group {
+    display: flex;
+    gap: var(--spacing-sm);
+    margin-bottom: var(--spacing-xl);
+}
+
+.form-name-group .form-input {
+    flex: 1;
+    margin-bottom: 0;
+}
+
+.form-name-group .cyberpunk-input {
+    text-transform: capitalize;
+}
+
+.form-input {
+    position: relative;
+    margin-bottom: var(--spacing-xl);
+    padding: 3px;
+    background: var(--neon-primary);
+    border-radius: var(--border-radius-sm);
+}
+
+.form-input::before {
+    content: "";
+    position: absolute;
+    inset: -1px;
+    background: linear-gradient(
+        45deg, 
+        var(--neon-primary), 
+        transparent 60%, 
+        var(--neon-secondary)
+    );
+    border-radius: 3px;
+    z-index: -1;
+}
+
+.form-input label {
+    position: absolute;
+    top: -10px;
+    left: 15px;
+    padding: 0 var(--spacing-xs);
+    background: var(--bg-dark);
+    color: var(--neon-secondary);
+    font-family: var(--font-display);
+    font-size: 1.2em;
+}
+
+.cyberpunk-input {
+    width: 100%;
+    height: 50px;
+    padding: var(--spacing-sm);
+    background: var(--bg-dark-transparent);
+    border: none;
+    border-radius: var(--border-radius-sm);
+    color: #fff;
+    font-family: "Share Tech Mono", monospace;
+    font-size: 1.1em;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+}
+
+.cyberpunk-input:focus {
+    outline: none;
+    border-color: var(--neon-primary);
+    box-shadow: var(--neon-shadow-sm);
+}
+
+/* Form Actions */
+.neon-btn {
+    position: relative;
+    width: 100%;
+    height: 60px;
+    margin-top: var(--spacing-lg);
+    padding: var(--spacing-sm);
+    background: transparent;
+    border: 2px solid var(--neon-primary);
+    border-radius: var(--border-radius-sm);
+    color: var(--neon-primary);
+    font-family: var(--font-display);
+    font-size: 1.4em;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    cursor: pointer;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.switch-text {
+    margin-top: 2ch;
+    color: var(--neon-tertiary);
+    font-family: var(--font-display);
+    font-size: 1.2em;
+    text-align: center;
+}
+
+.form-switch {
+    position: relative;
+    color: var(--neon-primary);
+    text-decoration: none;
+}
+
+.form-message {
+    margin-top: 1ch;
+    display: flex;
+    justify-content: center;
+}

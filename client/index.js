@@ -1,5 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // Theme Switching Logic
+    // -------------------------------
+    // THEME SWITCHER
+    // -------------------------------
     const applyTheme = (theme) => {
         document.body.className = `theme-${theme}`;
         document.querySelectorAll('.theme-option').forEach(option => {
@@ -8,18 +10,18 @@ document.addEventListener('DOMContentLoaded', () => {
         localStorage.setItem('selectedTheme', theme);
     };
 
-    // Initialize theme from localStorage or default to neon-oasis
+    // Lấy theme đã lưu trong localStorage hoặc mặc định là neon-oasis
     const savedTheme = localStorage.getItem('selectedTheme') || 'neon-oasis';
     applyTheme(savedTheme);
 
-    // Theme switcher event listeners
+    // Theme nút chọn
     document.querySelectorAll('.theme-option').forEach(option => {
         option.addEventListener('click', () => {
             applyTheme(option.dataset.theme);
         });
     });
 
-    // Theme Sidebar Toggle
+    // Chuyển đổi theme
     const themeToggle = document.getElementById('themeToggle');
     const themeSelector = document.querySelector('.theme-selector');
     
@@ -28,7 +30,7 @@ document.addEventListener('DOMContentLoaded', () => {
         themeToggle.classList.toggle('active');
     });
 
-    // Close theme selector when clicking outside
+    // Đóng theme selector khi click ra ngoài
     document.addEventListener('click', (e) => {
         if (!themeSelector.contains(e.target) && 
             !themeToggle.contains(e.target) && 
@@ -85,7 +87,7 @@ document.addEventListener('DOMContentLoaded', () => {
             };
 
             try {
-                const response = await fetch("https://cyperpunkform-backend.vercel.app/login", {
+                const response = await fetch("fetchAPI", {
                     method: "POST",
                     body: JSON.stringify(loginData),
                     headers: {
@@ -123,7 +125,7 @@ document.addEventListener('DOMContentLoaded', () => {
             };
 
             try {
-                const response = await fetch("https://cyperpunkform-backend.vercel.app/signup", {
+                const response = await fetch("fetchAPI", {
                     method: "POST",
                     body: JSON.stringify(signupData),
                     headers: {
