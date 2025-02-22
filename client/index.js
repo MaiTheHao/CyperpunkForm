@@ -67,11 +67,6 @@ document.addEventListener('DOMContentLoaded', () => {
             const text = btn.querySelector('.btn-text');
             if (text) text.style.textShadow = 'none';
         });
-        
-        btn.addEventListener('click', () => {
-            btn.style.transform = 'scale(0.95)';
-            setTimeout(() => btn.style.transform = 'scale(1)', 100);
-        });
     });
 
     // -------------------------------
@@ -145,4 +140,43 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     }
+
+    // -------------------------------
+    // MATRIX RAIN EFFECT
+    // -------------------------------
+    const canvas = document.createElement('canvas');
+    canvas.classList.add('matrix-canvas');
+    document.body.appendChild(canvas);
+
+    const ctx = canvas.getContext('2d');
+    const setSize = () => {
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+    };
+    setSize();
+
+    const chars = "0123456789ABCDEFｱｲｳｴｵｶｷｸｹｺｻｼｽｾｿﾀﾁﾂﾃﾄﾅﾆﾇﾈﾉ";
+    const size = 16;
+    const cols = Array(Math.ceil(canvas.width/size)).fill(1);
+
+    function draw() {
+        ctx.fillStyle = 'rgba(0, 0, 0, 0.05)';
+        ctx.fillRect(0, 0, canvas.width, canvas.height);
+        
+        ctx.fillStyle = getComputedStyle(document.body).getPropertyValue('--neon-primary');
+        ctx.font = `${size}px Iceland`;
+
+        cols.forEach((col, i) => {
+            const char = chars[Math.floor(Math.random() * chars.length)];
+            ctx.fillText(char, i * size, col * size);
+            
+            if(col * size > canvas.height && Math.random() > 0.975) {
+                cols[i] = 0;
+            }
+            cols[i]++;
+        });
+    }
+
+    window.addEventListener('resize', setSize);
+    setInterval(draw, 33);
 });
