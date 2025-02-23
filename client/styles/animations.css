@@ -41,3 +41,16 @@
         box-shadow: 0 0 30px var(--neon-glow);
     }
 }
+
+@keyframes neonBlink {
+	from {
+		box-shadow: 0 0 1rem var(--neon-primary), 
+					0 0 1.5rem var(--neon-secondary), 
+					inset 0 0 1rem var(--neon-glow);
+	}
+	to {
+		box-shadow: 0 0 0.75rem var(--neon-primary),
+					0 0 1rem var(--neon-secondary),
+					inset 0 0 0.5rem var(--neon-glow);
+	}
+}

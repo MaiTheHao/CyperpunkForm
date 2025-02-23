@@ -157,8 +157,8 @@
 .neon-btn:hover,
 .neon-btn:active {
 	color: white;
-	box-shadow: 0 0 30px var(--neon-primary), 0 0 60px var(--neon-secondary), inset 0 0 25px rgba(var(--neon-primary-rgb), 0.4);
-	background-color: rgba(var(--neon-primary-rgb), 0.15);
+	animation: neonBlink .5s infinite alternate;
+	background-color: color-mix(in srgb, var(--neon-primary) 30%, transparent);
 }
 
 .neon-btn:active {

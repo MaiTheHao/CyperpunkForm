@@ -156,7 +156,7 @@ document.addEventListener('DOMContentLoaded', () => {
     setSize();
 
     const chars = "0123456789ABCDEFｱｲｳｴｵｶｷｸｹｺｻｼｽｾｿﾀﾁﾂﾃﾄﾅﾆﾇﾈﾉ";
-    const size = 16;
+    const size = 20;
     const cols = Array(Math.ceil(canvas.width/size)).fill(1);
 
     function draw() {
